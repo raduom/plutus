@@ -16,7 +16,8 @@ import           Ledger                     (Blockchain, PubKey, Tx, TxOut (txOu
 import qualified Ledger.Value               as V
 import           Playground.Types           (PlaygroundError (OtherError), SimulatorWallet (SimulatorWallet),
                                              simulatorWalletBalance, simulatorWalletWallet)
-import           Wallet.Emulator.Types      (EmulatorEvent, EmulatorState (_chainNewestFirst, _emulatorLog), MockWallet,
+import           Wallet.Emulator.NodeClient (ChainState (_chainNewestFirst))
+import           Wallet.Emulator.Types      (EmulatorEvent, EmulatorState (_chainState, _emulatorLog), MockWallet,
                                              Trace, Wallet, WalletState, ownFunds, ownPrivateKey, processPending,
                                              runTraceTxPool, walletPubKey, walletStates, walletsNotifyBlock)
 import           Wallet.Generators          (GeneratorModel (GeneratorModel))
@@ -54,7 +55,7 @@ runTrace wallets actions =
                         Gen.genInitialTransaction $
                         GeneratorModel initialBalance pubKeys
                     (eRes, newState) = runTraceTxPool [initialTx] action
-                    blockchain = _chainNewestFirst newState
+                    blockchain = _chainNewestFirst (_chainState newState)
                     emulatorLog = _emulatorLog newState
                     fundsDistribution :: [SimulatorWallet]
                     fundsDistribution =

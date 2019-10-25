@@ -2,51 +2,75 @@
   "Right": {
     "emulatorLog": [
       {
-        "tag": "SlotAdd",
+        "tag": "ChainEvent",
         "contents": {
-          "getSlot": 3
+          "tag": "SlotAdd",
+          "contents": {
+            "getSlot": 3
+          }
         }
       },
       {
-        "tag": "TxnValidate",
+        "tag": "ChainEvent",
         "contents": {
-          "getTxId": "9f18b618591872183e188e184718a9189a18d718620818f4185418ef13183118c418e518df187709182d0318ca18da182a18fd186018b018e918e3188bff"
+          "tag": "TxnValidate",
+          "contents": {
+            "getTxId": "9f18b618591872183e188e184718a9189a18d718620818f4185418ef13183118c418e518df187709182d0318ca18da182a18fd186018b018e918e3188bff"
+          }
         }
       },
       {
-        "tag": "TxnSubmit",
+        "tag": "ChainEvent",
         "contents": {
-          "getTxId": "9f18b618591872183e188e184718a9189a18d718620818f4185418ef13183118c418e518df187709182d0318ca18da182a18fd186018b018e918e3188bff"
+          "tag": "TxnSubmit",
+          "contents": {
+            "getTxId": "9f18b618591872183e188e184718a9189a18d718620818f4185418ef13183118c418e518df187709182d0318ca18da182a18fd186018b018e918e3188bff"
+          }
         }
       },
       {
-        "tag": "SlotAdd",
+        "tag": "ChainEvent",
         "contents": {
-          "getSlot": 2
+          "tag": "SlotAdd",
+          "contents": {
+            "getSlot": 2
+          }
         }
       },
       {
-        "tag": "TxnValidate",
+        "tag": "ChainEvent",
         "contents": {
-          "getTxId": "9f1830188b184618ef189b15188118c9181a18a9184118bf187b189818e418b418390f181c18ce186618df188018c218c418f918c3184318aa182218ed18d9ff"
+          "tag": "TxnValidate",
+          "contents": {
+            "getTxId": "9f1830188b184618ef189b15188118c9181a18a9184118bf187b189818e418b418390f181c18ce186618df188018c218c418f918c3184318aa182218ed18d9ff"
+          }
         }
       },
       {
-        "tag": "TxnSubmit",
+        "tag": "ChainEvent",
         "contents": {
-          "getTxId": "9f1830188b184618ef189b15188118c9181a18a9184118bf187b189818e418b418390f181c18ce186618df188018c218c418f918c3184318aa182218ed18d9ff"
+          "tag": "TxnSubmit",
+          "contents": {
+            "getTxId": "9f1830188b184618ef189b15188118c9181a18a9184118bf187b189818e418b418390f181c18ce186618df188018c218c418f918c3184318aa182218ed18d9ff"
+          }
         }
       },
       {
-        "tag": "SlotAdd",
+        "tag": "ChainEvent",
         "contents": {
-          "getSlot": 1
+          "tag": "SlotAdd",
+          "contents": {
+            "getSlot": 1
+          }
         }
       },
       {
-        "tag": "TxnValidate",
+        "tag": "ChainEvent",
         "contents": {
-          "getTxId": "9f0f18451849185318a3186618a0184018fb18281871181e18f818d4184418cf189518d6185018c618c0185418a918a018e00a186418ca182e1825011859ff"
+          "tag": "TxnValidate",
+          "contents": {
+            "getTxId": "9f0f18451849185318a3186618a0184018fb18281871181e18f818d4184418cf189518d6185018c618c0185418a918a018e00a186418ca182e1825011859ff"
+          }
         }
       }
     ],

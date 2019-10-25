@@ -78,6 +78,7 @@ import           Ledger.Slot                           (Slot)
 import           Ledger.Value                          (Value)
 import           Wallet.Emulator                       (EmulatorAction, EmulatorEvent, Wallet)
 import qualified Wallet.Emulator                       as EM
+import qualified Wallet.Emulator.NodeClient            as NC
 
 import           Language.Plutus.Contract.Schema       (Event(..), Handlers(..), Input, Output)
 import           Language.Plutus.Contract.Trace        as X
@@ -540,7 +541,7 @@ assertNoFailedTransactions
     :: forall s e a.
     TracePredicate s e a
 assertNoFailedTransactions = PredF $ \(_, ContractTraceResult{_ctrEmulatorState = st}) ->
-    let failedTransactions = mapMaybe (\case { EM.TxnValidationFail txid err -> Just (txid, err); _ -> Nothing}) (EM.emLog st)
+    let failedTransactions = mapMaybe (\case { EM.ChainEvent (NC.TxnValidationFail txid err) -> Just (txid, err); _ -> Nothing}) (EM.emLog st)
     in case failedTransactions of
         [] -> pure True
         xs -> do
